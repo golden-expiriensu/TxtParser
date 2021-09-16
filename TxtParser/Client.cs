@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             string directory = @"C:\Users\gunda\source\repos\TxtParser\originFile.txt";
-            Parser.TxtParser.ParseTxtFile(directory);
+            ParserLibrary.TxtParser.ParseTxtFile(directory);
         }
     }
 }

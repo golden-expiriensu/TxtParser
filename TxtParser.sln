@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "TxtParser\Client.csproj", "{6228D843-FED2-4CAA-A6BB-1B3373A47380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "TxtParser\Client.csproj", "{6228D843-FED2-4CAA-A6BB-1B3373A47380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{A25F6CDB-B414-414C-9095-61BD85DB8498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserLibrary", "Parser\ParserLibrary.csproj", "{A25F6CDB-B414-414C-9095-61BD85DB8498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonContainerTests", "PersonContainerTests\PersonContainerTests.csproj", "{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonContainerTests", "PersonContainerTests\PersonContainerTests.csproj", "{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
