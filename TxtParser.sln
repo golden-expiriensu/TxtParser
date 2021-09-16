@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "TxtParser\Client.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{A25F6CDB-B414-414C-9095-61BD85DB8498}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonContainerTests", "PersonContainerTests\PersonContainerTests.csproj", "{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A25F6CDB-B414-414C-9095-61BD85DB8498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A25F6CDB-B414-414C-9095-61BD85DB8498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A25F6CDB-B414-414C-9095-61BD85DB8498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F61E51-E19A-4DDC-8CF1-537AF1832A2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

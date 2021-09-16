@@ -4,9 +4,19 @@ using System.Linq;
 
 namespace Parser
 {
-    class PersonContainer : ICollection<Person>
+    public class PersonContainer : ICollection<Person>
     {
         ICollection<Person> _people = new List<Person>();
+        public Person this[int i]
+        {
+            get => _people.ToList()[i];
+        }
+        public Person this[string name]
+        {
+            get => _people.Where(p => p.Name.Equals(name)).FirstOrDefault();
+        }
+
+        #region ICollection implementing
 
         public int Count => _people.Count;
 
@@ -20,7 +30,7 @@ namespace Parser
             }
             else
             {
-                FindPersonByName(item).AddPersonRecord(item);
+                FindPersonWithSameName(item).AddPersonRecord(item);
             }
         }
 
@@ -31,7 +41,7 @@ namespace Parser
 
         public bool Contains(Person item)
         {
-            return FindPersonByName(item) != null;
+            return FindPersonWithSameName(item) != null;
         }
 
         public void CopyTo(Person[] array, int arrayIndex)
@@ -46,7 +56,7 @@ namespace Parser
 
         public bool Remove(Person item)
         {
-            Person person = FindPersonByName(item);
+            Person person = FindPersonWithSameName(item);
 
             if (person == null) return false;
             else return _people.Remove(person);
@@ -55,8 +65,27 @@ namespace Parser
         IEnumerator IEnumerable.GetEnumerator()
         {
             return _people.GetEnumerator();
+        } 
+        
+        #endregion
+
+
+        public void SortByAlphabet()
+        {
+            List<string> names = new();
+
+            foreach (Person person in _people)
+                names.Add(person.Name);
+
+            names.Sort();
+
+            ICollection<Person> sortedPeople = new List<Person>();
+            foreach (string name in names)
+                sortedPeople.Add(this[name]);
         }
 
-        Person FindPersonByName(Person person) => _people.Where(p => p.Name == person.Name).FirstOrDefault();
+        Person FindPersonWithSameName(Person person) => _people.Where(
+            p => p.Name.Equals(person.Name)
+            ).FirstOrDefault();
     }
 }
