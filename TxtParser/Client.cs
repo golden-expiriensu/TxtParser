@@ -1,4 +1,4 @@
-﻿namespace TxtParser
+﻿namespace Client
 {
     class Client
     {
