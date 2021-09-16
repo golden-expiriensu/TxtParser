@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Parser
@@ -8,7 +9,8 @@ namespace Parser
         public static void ParseTxtFile(string fileDirectory)
         {
             PersonContainer people = ConvertTxtToPersonContainer(fileDirectory);
-
+            people.SortByAlphabet();
+            WriteSortedRecordsToTxt(people, fileDirectory);
         }
 
         static PersonContainer ConvertTxtToPersonContainer(string fileDirectory)
@@ -60,6 +62,32 @@ namespace Parser
                 Console.WriteLine("Exception: " + e.Message);
                 return null;
             }
+        }
+
+        static void WriteSortedRecordsToTxt(PersonContainer personContainer, string directiory)
+        {
+            try
+            {
+                StreamWriter sw = new(directiory);
+
+                ICollection<Person> people = (List<Person>)personContainer;
+
+                WriteOneLineToTxt(sw, people);
+
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+        }
+
+        static void WriteOneLineToTxt(StreamWriter sw, ICollection<Person> people)
+        {
+            foreach (Person person in people)
+                sw.WriteLine($"{person.Name} {person.RequestsPerHour}" +
+                    $" {person.CountOfHours} {person.TotalCountOfRequests}" +
+                    $" {person.AdditionalInfo}");
         }
     }
 }

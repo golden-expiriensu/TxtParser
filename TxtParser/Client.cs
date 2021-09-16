@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace TxtParser
+﻿namespace TxtParser
 {
     class Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string directory = @"C:\Users\gunda\source\repos\TxtParser\originFile.txt";
+            Parser.TxtParser.ParseTxtFile(directory);
         }
     }
 }
