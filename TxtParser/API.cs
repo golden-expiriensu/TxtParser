@@ -84,7 +84,7 @@ namespace TxtParser
 
                 ICollection<Person> people = (List<Person>)personContainer;
 
-                WriteOneLineToTxt(sw, people);
+                WritePeopleToFile(sw, people);
 
                 sw.Close();
 
@@ -97,7 +97,7 @@ namespace TxtParser
             }
         }
 
-        static void WriteOneLineToTxt(StreamWriter sw, ICollection<Person> people)
+        static void WritePeopleToFile(StreamWriter sw, ICollection<Person> people)
         {
             foreach (Person person in people)
                 sw.WriteLine($"{person.Name} {person.RequestsPerHour}" +
