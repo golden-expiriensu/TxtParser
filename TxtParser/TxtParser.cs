@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ParserLibrary
+namespace TxtParser
 {
     public static class TxtParser
     {

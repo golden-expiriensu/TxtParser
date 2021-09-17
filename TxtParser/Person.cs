@@ -1,4 +1,4 @@
-﻿namespace ParserLibrary
+﻿namespace TxtParser
 {
     public class Person
     {

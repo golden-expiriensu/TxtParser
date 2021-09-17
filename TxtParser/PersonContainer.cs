@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ParserLibrary
+namespace TxtParser
 {
     public class PersonContainer : IEnumerable<Person>
     {
