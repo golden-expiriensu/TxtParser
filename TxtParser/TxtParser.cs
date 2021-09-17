@@ -6,11 +6,23 @@ namespace TxtParser
 {
     public static class TxtParser
     {
-        public static void ParseTxtFile(string fileDirectory)
+        public static bool ParseTxtFile(string fileDirectory)
         {
             PersonContainer people = ConvertTxtToPersonContainer(fileDirectory);
-            people.SortByAlphabet();
-            WriteSortedRecordsToTxt(people, fileDirectory);
+
+            try
+            {
+                people.SortByAlphabet();
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("Exception :" + e.Message);
+                return false;
+            }
+
+            if (WriteSortedRecordsToTxt(people, fileDirectory))
+                return true;
+            else return false;
         }
 
         static PersonContainer ConvertTxtToPersonContainer(string fileDirectory)
@@ -21,7 +33,7 @@ namespace TxtParser
             try
             {
                 StreamReader sr = new(fileDirectory);
-                
+
                 line = sr.ReadLine();
                 while (line != null)
                 {
@@ -64,7 +76,7 @@ namespace TxtParser
             }
         }
 
-        static void WriteSortedRecordsToTxt(PersonContainer personContainer, string directiory)
+        static bool WriteSortedRecordsToTxt(PersonContainer personContainer, string directiory)
         {
             try
             {
@@ -75,10 +87,13 @@ namespace TxtParser
                 WriteOneLineToTxt(sw, people);
 
                 sw.Close();
+
+                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.Message);
+                return false;
             }
         }
 
