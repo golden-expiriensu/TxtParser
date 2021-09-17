@@ -4,7 +4,7 @@ using System.IO;
 
 namespace TxtParser
 {
-    public static class TxtParser
+    public static class API
     {
         public static bool ParseTxtFile(string fileDirectory)
         {
